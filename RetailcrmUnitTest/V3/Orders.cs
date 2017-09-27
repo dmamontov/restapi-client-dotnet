@@ -17,12 +17,7 @@
         public Orders()
         {
             NameValueCollection appSettings = ConfigurationManager.AppSettings;
-
-            _client = new Client(
-                appSettings["apiUrl"],
-                appSettings["apiKey"],
-                "v3"
-            );
+            _client = new Client(appSettings["apiUrl"], appSettings["apiKey"]);
         }
 
         [TestMethod]
