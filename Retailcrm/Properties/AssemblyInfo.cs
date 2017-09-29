@@ -4,19 +4,19 @@ using System.Runtime.InteropServices;
 // Общие сведения об этой сборке предоставляются следующим набором
 // набора атрибутов. Измените значения этих атрибутов, чтобы изменить сведения,
 // связанные со сборкой.
-[assembly: AssemblyTitle("Retailcrm")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("RetailcrmSDK")]
+[assembly: AssemblyDescription("Multiversion API client for RetailCRM")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Retailcrm")]
-[assembly: AssemblyCopyright("Copyright ©  2017")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCompany("RetailDriver LLC")]
+[assembly: AssemblyProduct("RetailcrmSDK")]
+[assembly: AssemblyCopyright("Copyright © RetailDriver LLC 2017")]
+[assembly: AssemblyTrademark("RetailDriver LLC")]
 [assembly: AssemblyCulture("")]
 
 // Установка значения False для параметра ComVisible делает типы в этой сборке невидимыми
 // для компонентов COM. Если необходимо обратиться к типу в этой сборке через
 // COM, задайте атрибуту ComVisible значение TRUE для этого типа.
-[assembly: ComVisible(false)]
+[assembly: ComVisible(true)]
 
 // Следующий GUID служит для идентификации библиотеки типов, если этот проект будет видимым для COM
 [assembly: Guid("9c378ef4-9f9b-4214-a9aa-1fc3c44edb41")]
