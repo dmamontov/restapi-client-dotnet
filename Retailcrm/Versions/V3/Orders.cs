@@ -183,7 +183,7 @@
 
             if (orders.Count > 50)
             {
-                throw new ArgumentException("Parameter `orders` must contain less or 50 records");
+                throw new ArgumentException("Parameter `orders` must contain 50 or less records");
             }
 
             return _request.MakeRequest(

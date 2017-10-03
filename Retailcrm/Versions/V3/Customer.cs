@@ -115,7 +115,7 @@
 
             if (customers.Count > 50)
             {
-                throw new ArgumentException("Parameter `customers` must contain less or 50 records");
+                throw new ArgumentException("Parameter `customers` must contain 50 or less records");
             }
 
             return _request.MakeRequest(

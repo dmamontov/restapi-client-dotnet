@@ -52,6 +52,7 @@
     <Compile Include="Versions\V3\Orders.cs" />
     <Compile Include="Versions\V3\Customer.cs" />
     <Compile Include="Versions\V3\Packs.cs" />
+    <Compile Include="Versions\V3\Store.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Versions\V4\" />

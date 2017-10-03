@@ -185,7 +185,7 @@
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentException), "Parameter `customers` must contains a data")]
+        [ExpectedException(typeof(ArgumentException), "Parameter `customers` must contain 50 or less records")]
         public void CustomersUploadLimitArgumentExeption()
         {
             List<object> customers = new List<object>();
