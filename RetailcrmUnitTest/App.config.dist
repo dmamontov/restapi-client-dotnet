@@ -3,5 +3,6 @@
   <appSettings>
     <add key="apiUrl" value="https://example.retailcrm.ru"/>
     <add key="apiKey" value="BBBBBBBBBBBBBBBBBBBBBBBBBBBB"/>
+    <add key="site" value="default"/>
   </appSettings>
 </configuration>

@@ -12,11 +12,12 @@
     public class CustomersTest
     {
         private readonly Client _client;
+        private readonly NameValueCollection _appSettings;
 
         public CustomersTest()
         {
-            NameValueCollection appSettings = ConfigurationManager.AppSettings;
-            _client = new Client(appSettings["apiUrl"], appSettings["apiKey"]);
+            _appSettings = ConfigurationManager.AppSettings;
+            _client = new Client(_appSettings["apiUrl"], _appSettings["apiKey"]);
         }
 
         [TestMethod]
@@ -101,6 +102,8 @@
         [TestMethod]
         public void CustomersList()
         {
+            _client.SetSite(_appSettings["site"]);
+
             Response response = _client.CustomersList();
 
             Assert.IsTrue(response.IsSuccessfull());

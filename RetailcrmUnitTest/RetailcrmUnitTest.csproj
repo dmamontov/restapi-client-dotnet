@@ -53,9 +53,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApiTest.cs" />
+    <Compile Include="V3\ClientTest.cs" />
     <Compile Include="V3\CustomersTest.cs" />
     <Compile Include="V3\OrdersTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="V3\PacksTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

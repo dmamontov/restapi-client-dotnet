@@ -47,6 +47,7 @@
     <Compile Include="QueryStringBuilder.cs" />
     <Compile Include="Request.cs" />
     <Compile Include="Response.cs" />
+    <Compile Include="Versions\V3\Statistic.cs" />
     <Compile Include="Versions\V3\Client.cs" />
     <Compile Include="Versions\V3\Orders.cs" />
     <Compile Include="Versions\V3\Customer.cs" />
