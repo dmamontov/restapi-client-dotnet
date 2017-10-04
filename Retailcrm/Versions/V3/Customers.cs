@@ -13,7 +13,7 @@
                 throw new ArgumentException("Parameter `customer` must contains a data");
             }
 
-            return _request.MakeRequest(
+            return Request.MakeRequest(
                 "/customers/create",
                 Request.MethodPost,
                 FillSite(
@@ -42,7 +42,7 @@
 
             string uid = by == "externalId" ? customer["externalId"].ToString() : customer["id"].ToString();
 
-            return _request.MakeRequest(
+            return Request.MakeRequest(
                 $"/customers/{uid}/edit",
                 Request.MethodPost,
                 FillSite(
@@ -60,7 +60,7 @@
         {
             CheckIdParameter(by);
 
-            return _request.MakeRequest(
+            return Request.MakeRequest(
                 $"/customers/{id}",
                 Request.MethodGet,
                 FillSite(
@@ -91,12 +91,12 @@
                 parameters.Add("limit", limit);
             }
 
-            return _request.MakeRequest("/customers", Request.MethodGet, parameters);
+            return Request.MakeRequest("/customers", Request.MethodGet, parameters);
         }
 
         public Response CustomersFixExternalIds(Dictionary<string, object>[] ids)
         {
-            return _request.MakeRequest(
+            return Request.MakeRequest(
                 "/customers/fix-external-ids",
                 Request.MethodPost,
                 new Dictionary<string, object>
@@ -118,7 +118,7 @@
                 throw new ArgumentException("Parameter `customers` must contain 50 or less records");
             }
 
-            return _request.MakeRequest(
+            return Request.MakeRequest(
                 "/customers/upload",
                 Request.MethodPost,
                 FillSite(

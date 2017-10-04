@@ -45,7 +45,7 @@
             parameters = _defaultParameters.Union(parameters).ToDictionary(k => k.Key, v => v.Value);
             path = _url + path;
 
-            string httpQuery = QueryStringBuilder.BuildQueryString(parameters);
+            string httpQuery = QueryBuilder.BuildQueryString(parameters);
 
             if (method.Equals(MethodGet) && parameters.Count > 0)
             {

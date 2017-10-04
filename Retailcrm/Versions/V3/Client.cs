@@ -6,8 +6,8 @@
 
     public partial class Client
     {
-        private readonly Request _request;
-        private string _siteCode;
+        protected Request Request;
+        protected string SiteCode;
 
         public Client(string url, string key, string site = "")
         {
@@ -18,8 +18,8 @@
 
             url += "api/v3";
 
-            _request = new Request(url, new Dictionary<string, object> { { "apiKey", key } });
-            _siteCode = site;
+            Request = new Request(url, new Dictionary<string, object> { { "apiKey", key } });
+            SiteCode = site;
         }
 
         /// <summary>
@@ -28,7 +28,7 @@
         /// <returns>string</returns>
         public string GetSite()
         {
-            return _siteCode;
+            return SiteCode;
         }
 
         /// <summary>
@@ -36,14 +36,14 @@
         /// </summary>
         public void SetSite(string site)
         {
-            _siteCode = site;
+            SiteCode = site;
         }
 
         /// <summary>
         /// Check ID parameter
         /// </summary>
         /// <param name="by"></param>
-        private static void CheckIdParameter(string by)
+        protected static void CheckIdParameter(string by)
         {
             string[] allowedForBy = { "externalId", "id" };
             if (allowedForBy.Contains(by) == false)
@@ -58,15 +58,15 @@
         /// <param name="site"></param>
         /// <param name="param"></param>
         /// <returns>Dictionary</returns>
-        private Dictionary<string, object> FillSite(string site, Dictionary<string, object> param)
+        protected Dictionary<string, object> FillSite(string site, Dictionary<string, object> param)
         {
             if (site.Length > 1)
             {
                 param.Add("site", site);
             }
-            else if (_siteCode.Length > 1)
+            else if (SiteCode.Length > 1)
             {
-                param.Add("site", _siteCode);
+                param.Add("site", SiteCode);
             }
 
             return param;

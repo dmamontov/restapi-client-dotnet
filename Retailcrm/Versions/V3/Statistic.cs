@@ -4,7 +4,7 @@
     {
         public Response StatisticUpdate()
         {
-            return _request.MakeRequest(
+            return Request.MakeRequest(
                 "/statistic/update",
                 Request.MethodGet
             );

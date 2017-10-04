@@ -25,7 +25,7 @@
                 parameters.Add("limit", limit);
             }
 
-            return _request.MakeRequest("/orders/packs", Request.MethodGet, parameters);
+            return Request.MakeRequest("/orders/packs", Request.MethodGet, parameters);
         }
 
         public Response PacksCreate(Dictionary<string, object> pack)
@@ -35,7 +35,7 @@
                 throw new ArgumentException("Parameter `pack` must contains a data");
             }
 
-            return _request.MakeRequest(
+            return Request.MakeRequest(
                 "/orders/packs/create",
                 Request.MethodPost,
                 new Dictionary<string, object>
@@ -57,7 +57,7 @@
                 throw new ArgumentException("Parameter `pack` must contains an id");
             }
 
-            return _request.MakeRequest(
+            return Request.MakeRequest(
                 $"/orders/packs/{pack["id"].ToString()}/edit",
                 Request.MethodPost,
                 new Dictionary<string, object>
@@ -74,7 +74,7 @@
                 throw new ArgumentException("Parameter `id` must contains a data");
             }
 
-            return _request.MakeRequest(
+            return Request.MakeRequest(
                 $"/orders/packs/{id}/delete",
                 Request.MethodPost
             );
@@ -82,7 +82,7 @@
 
         public Response PacksGet(string id)
         {
-            return _request.MakeRequest(
+            return Request.MakeRequest(
                 $"/orders/packs/{id}",
                 Request.MethodGet
             );
@@ -107,7 +107,7 @@
                 parameters.Add("limit", limit);
             }
 
-            return _request.MakeRequest("/orders/packs/history", Request.MethodGet, parameters);
+            return Request.MakeRequest("/orders/packs/history", Request.MethodGet, parameters);
         }
     }
 }

@@ -13,7 +13,7 @@
                 throw new ArgumentException("Parameter `order` must contains a data");
             }
 
-            return _request.MakeRequest(
+            return Request.MakeRequest(
                 "/orders/create",
                 Request.MethodPost,
                 FillSite(
@@ -42,7 +42,7 @@
 
             string uid = by == "externalId" ? order["externalId"].ToString() : order["id"].ToString();
 
-            return _request.MakeRequest(
+            return Request.MakeRequest(
                 $"/orders/{uid}/edit",
                 Request.MethodPost,
                 FillSite(
@@ -60,7 +60,7 @@
         {
             CheckIdParameter(by);
 
-            return _request.MakeRequest(
+            return Request.MakeRequest(
                 $"/orders/{id}",
                 Request.MethodGet,
                 FillSite(
@@ -91,12 +91,12 @@
                 parameters.Add("limit", limit);
             }
 
-            return _request.MakeRequest("/orders", Request.MethodGet, parameters);
+            return Request.MakeRequest("/orders", Request.MethodGet, parameters);
         }
 
         public Response OrdersFixExternalIds(Dictionary<string, object>[] ids)
         {
-            return _request.MakeRequest(
+            return Request.MakeRequest(
                 "/orders/fix-external-ids",
                 Request.MethodPost,
                 new Dictionary<string, object>
@@ -132,7 +132,7 @@
 
             parameters.Add("skipMyChanges", skipMyChanges);
             
-            return _request.MakeRequest(
+            return Request.MakeRequest(
                 "/orders/history",
                 Request.MethodGet,
                 parameters
@@ -167,7 +167,7 @@
                 parameters.Add("externalIds", externalIds);
             }
 
-            return _request.MakeRequest(
+            return Request.MakeRequest(
                 "/orders/statuses",
                 Request.MethodGet,
                 parameters
@@ -186,7 +186,7 @@
                 throw new ArgumentException("Parameter `orders` must contain 50 or less records");
             }
 
-            return _request.MakeRequest(
+            return Request.MakeRequest(
                 "/orders/upload",
                 Request.MethodPost,
                 FillSite(

@@ -25,7 +25,7 @@
                 parameters.Add("limit", limit);
             }
 
-            return _request.MakeRequest("/store/inventories", Request.MethodGet, parameters);
+            return Request.MakeRequest("/store/inventories", Request.MethodGet, parameters);
         }
 
         public Response StoreInventoriesUpload(List<object> offers, string site = "")
@@ -40,7 +40,7 @@
                 throw new ArgumentException("Parameter `offers` must contain 250 or less records");
             }
 
-            return _request.MakeRequest(
+            return Request.MakeRequest(
                 "/store/inventories/upload",
                 Request.MethodPost,
                 FillSite(

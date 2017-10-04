@@ -108,12 +108,10 @@
             Assert.IsInstanceOfType(response, typeof(Response));
             Assert.IsTrue(response.GetResponse().ContainsKey("orders"));
 
-
             Dictionary<string, object> filter = new Dictionary<string, object>
             {
                 { "extendedStatus", "new" },
                 { "createdAtTo", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}
-
             };
 
             Response responseFiltered = _client.OrdersList(filter, 2, 100);

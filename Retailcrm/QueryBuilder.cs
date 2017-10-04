@@ -5,14 +5,14 @@
     using System.Collections.Generic;
     using System.Linq;
 
-    public class QueryStringBuilder
+    public class QueryBuilder
     {
         private readonly List<KeyValuePair<string, object>> _keyValuePairs
             = new List<KeyValuePair<string, object>>();
 
         public static string BuildQueryString(object queryData, string argSeperator = "&")
         {
-            var encoder = new QueryStringBuilder();
+            var encoder = new QueryBuilder();
             encoder.AddEntry(null, queryData, allowObjects: true);
 
             return encoder.GetUriString(argSeperator);

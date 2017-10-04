@@ -6,18 +6,17 @@ namespace RetailcrmUnitTest.V3
     using System.Collections.Generic;
     using System.Collections.Specialized;
     using System.Configuration;
-    using System.Linq;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Retailcrm;
     using Retailcrm.Versions.V3;
 
     [TestClass]
-    public class StoreTest
+    public class StoresTest
     {
         private readonly Client _client;
         private readonly NameValueCollection _appSettings;
 
-        public StoreTest()
+        public StoresTest()
         {
             _appSettings = ConfigurationManager.AppSettings;
             _client = new Client(_appSettings["apiUrl"], _appSettings["apiKey"], _appSettings["site"]);
