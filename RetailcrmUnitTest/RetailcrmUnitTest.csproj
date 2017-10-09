@@ -60,7 +60,9 @@
     <Compile Include="V3\PacksTest.cs" />
     <Compile Include="V3\StoresTest.cs" />
     <Compile Include="V4\OrdersTest.cs" />
+    <Compile Include="V4\ReferencesTest.cs" />
     <Compile Include="V5\OrdersTest.cs" />
+    <Compile Include="V5\ReferencesTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

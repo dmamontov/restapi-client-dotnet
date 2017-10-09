@@ -135,7 +135,7 @@ namespace RetailcrmUnitTest.V3
             Assert.IsInstanceOfType(packsGetResponse, typeof(Response));
             Assert.IsTrue(packsGetResponse.GetResponse().ContainsKey("pack"));
 
-            Response packsDeleteResponse = _client.PacksGet(packId);
+            Response packsDeleteResponse = _client.PacksDelete(packId);
 
             Assert.IsTrue(packsDeleteResponse.IsSuccessfull());
             Assert.IsTrue(packsDeleteResponse.GetStatusCode() == 200);
@@ -167,12 +167,40 @@ namespace RetailcrmUnitTest.V3
                 { "endDate", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}
             };
 
-            Response response = _client.PacksHistory(filter, 1, 100);
+            Response response = _client.PacksHistory(filter, 2, 100);
 
             Assert.IsTrue(response.IsSuccessfull());
             Assert.IsTrue(response.GetStatusCode() == 200);
             Assert.IsInstanceOfType(response, typeof(Response));
             Assert.IsTrue(response.GetResponse().ContainsKey("history"));
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException), "Parameter `pack` must contains a data")]
+        public void PacksCreateArgumentExeption()
+        {
+            Dictionary<string, object> pack = new Dictionary<string, object>();
+            _client.PacksCreate(pack);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException), "Parameter `pack` must contains a data")]
+        public void PacksUpdateArgumentExeption()
+        {
+            Dictionary<string, object> pack = new Dictionary<string, object>();
+            _client.PacksUpdate(pack);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException), "Parameter `pack` must contains an id")]
+        public void PacksUpdateWithoutIdArgumentExeption()
+        {
+            Dictionary<string, object> pack = new Dictionary<string, object>
+            {
+                { "quantity", 2 }
+            };
+
+            _client.PacksUpdate(pack);
         }
     }
 }

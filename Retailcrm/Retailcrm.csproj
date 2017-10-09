@@ -55,9 +55,25 @@
     <Compile Include="Versions\V3\Packs.cs" />
     <Compile Include="Versions\V3\Stores.cs" />
     <Compile Include="Versions\V4\Client.cs" />
+    <Compile Include="Versions\V4\Customers.cs" />
+    <Compile Include="Versions\V4\Delivery.cs" />
+    <Compile Include="Versions\V4\Marketplace.cs" />
     <Compile Include="Versions\V4\Orders.cs" />
+    <Compile Include="Versions\V4\References.cs" />
+    <Compile Include="Versions\V4\Stores.cs" />
+    <Compile Include="Versions\V4\Users.cs" />
     <Compile Include="Versions\V5\Client.cs" />
+    <Compile Include="Versions\V5\Costs.cs" />
+    <Compile Include="Versions\V5\Delivery.cs" />
+    <Compile Include="Versions\V5\Integrations.cs" />
+    <Compile Include="Versions\V5\Notes.cs" />
     <Compile Include="Versions\V5\Orders.cs" />
+    <Compile Include="Versions\V5\Payments.cs" />
+    <Compile Include="Versions\V5\References.cs" />
+    <Compile Include="Versions\V5\Segments.cs" />
+    <Compile Include="Versions\V5\Stores.cs" />
+    <Compile Include="Versions\V5\Tasks.cs" />
+    <Compile Include="Versions\V5\Users.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

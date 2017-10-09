@@ -69,11 +69,6 @@
 
         public Response PacksDelete(string id)
         {
-            if (id.Length < 1)
-            {
-                throw new ArgumentException("Parameter `id` must contains a data");
-            }
-
             return Request.MakeRequest(
                 $"/orders/packs/{id}/delete",
                 Request.MethodPost

@@ -1,6 +1,4 @@
-﻿using System.Diagnostics;
-
-namespace RetailcrmUnitTest.V3
+﻿namespace RetailcrmUnitTest.V3
 {
     using System;
     using System.Collections.Generic;
@@ -77,8 +75,6 @@ namespace RetailcrmUnitTest.V3
             Assert.IsTrue(response.GetStatusCode() == 200);
             Assert.IsInstanceOfType(response, typeof(Response));
             Assert.IsTrue(response.GetResponse().ContainsKey("processedOffersCount"));
-
-            Debug.WriteLine(response.GetRawResponse());
         }
 
         [TestMethod]
@@ -96,8 +92,43 @@ namespace RetailcrmUnitTest.V3
             Assert.IsTrue(response.GetStatusCode() == 200);
             Assert.IsInstanceOfType(response, typeof(Response));
             Assert.IsTrue(response.GetResponse().ContainsKey("offers"));
+        }
 
-            Debug.WriteLine(response.GetRawResponse());
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException), "Parameter `offers` must contains a data")]
+        public void StoreInventoriesUploadArgumentExeption()
+        {
+            List<object> offers = new List<object>();
+            _client.StoreInventoriesUpload(offers);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException), "Parameter `offers` must contain 250 or less records")]
+        public void StoreInventoriesUploadLimitArgumentExeption()
+        {
+            List<object> offers = new List<object>();
+
+            for (int i = 0; i < 300; i++)
+            {
+                offers.Add(
+                    new Dictionary<string, object>
+                    {
+                        { "xmlId", Guid.NewGuid().ToString().Replace("-", string.Empty).Substring(0, 12)},
+                        { "stores", new List<object>
+                            {
+                                new Dictionary<string, object>
+                                {
+                                    { "code", _appSettings["store"] },
+                                    { "available", 700 },
+                                    { "purchasePrice", 400}
+                                }
+                            }
+                        }
+                    }
+                );
+            }
+
+            _client.StoreInventoriesUpload(offers);
         }
     }
 }
