@@ -4,11 +4,11 @@ using System.Runtime.InteropServices;
 // Общие сведения об этой сборке предоставляются следующим набором
 // набора атрибутов. Измените значения этих атрибутов, чтобы изменить сведения,
 // связанные со сборкой.
-[assembly: AssemblyTitle("RetailcrmSDK")]
+[assembly: AssemblyTitle("Retailcrm.SDK")]
 [assembly: AssemblyDescription("Multiversion API client for RetailCRM")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("RetailDriver LLC")]
-[assembly: AssemblyProduct("RetailcrmSDK")]
+[assembly: AssemblyProduct("Retailcrm.SDK")]
 [assembly: AssemblyCopyright("Copyright © RetailDriver LLC 2017")]
 [assembly: AssemblyTrademark("RetailDriver LLC")]
 [assembly: AssemblyCulture("")]
@@ -31,5 +31,5 @@ using System.Runtime.InteropServices;
 // Можно задать все значения или принять номер сборки и номер редакции по умолчанию.
 // используя "*", как показано ниже:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyVersion("5.0.0.0")]
+[assembly: AssemblyFileVersion("5.0.0.0")]
