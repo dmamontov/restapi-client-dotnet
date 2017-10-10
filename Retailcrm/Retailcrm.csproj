@@ -64,6 +64,7 @@
     <Compile Include="Versions\V4\Users.cs" />
     <Compile Include="Versions\V5\Client.cs" />
     <Compile Include="Versions\V5\Costs.cs" />
+    <Compile Include="Versions\V5\CustomFields.cs" />
     <Compile Include="Versions\V5\Delivery.cs" />
     <Compile Include="Versions\V5\Integrations.cs" />
     <Compile Include="Versions\V5\Notes.cs" />
