@@ -6,6 +6,13 @@
 
     public partial class Client
     {
+        /// <summary>
+        /// Get custom fields
+        /// </summary>
+        /// <param name="filter"></param>
+        /// <param name="page"></param>
+        /// <param name="limit"></param>
+        /// <returns></returns>
         public Response CustomFieldsList(Dictionary<string, object> filter = null, int page = 0, int limit = 0)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
@@ -28,6 +35,12 @@
             return Request.MakeRequest("/custom-fields", Request.MethodGet, parameters);
         }
 
+        /// <summary>
+        /// Create custom field
+        /// </summary>
+        /// <param name="customField"></param>
+        /// <param name="entity"></param>
+        /// <returns></returns>
         public Response CustomFieldsCreate(Dictionary<string, object> customField, string entity = "")
         {
             List<string> types = new List<string>
@@ -72,6 +85,12 @@
             );
         }
 
+        /// <summary>
+        /// Get custom field
+        /// </summary>
+        /// <param name="code"></param>
+        /// <param name="entity"></param>
+        /// <returns></returns>
         public Response CustomFieldsGet(string code, string entity)
         {
             return Request.MakeRequest(
@@ -80,6 +99,12 @@
             );
         }
 
+        /// <summary>
+        /// Update custom field
+        /// </summary>
+        /// <param name="customField"></param>
+        /// <param name="entity"></param>
+        /// <returns></returns>
         public Response CustomFieldsUpdate(Dictionary<string, object> customField, string entity = "")
         {
             if (customField.Count < 1)
@@ -107,6 +132,13 @@
             );
         }
 
+        /// <summary>
+        /// Get custom dictionaries
+        /// </summary>
+        /// <param name="filter"></param>
+        /// <param name="page"></param>
+        /// <param name="limit"></param>
+        /// <returns></returns>
         public Response CustomDictionaryList(Dictionary<string, object> filter = null, int page = 0, int limit = 0)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
@@ -129,6 +161,11 @@
             return Request.MakeRequest("/custom-fields/dictionaries", Request.MethodGet, parameters);
         }
 
+        /// <summary>
+        /// Create custom dictionary
+        /// </summary>
+        /// <param name="customDictionary"></param>
+        /// <returns></returns>
         public Response CustomDictionaryCreate(Dictionary<string, object> customDictionary)
         {
             if (customDictionary.Count < 1)
@@ -156,6 +193,11 @@
             );
         }
 
+        /// <summary>
+        /// Get custom dictionary
+        /// </summary>
+        /// <param name="code"></param>
+        /// <returns></returns>
         public Response CustomDictionaryGet(string code)
         {
             return Request.MakeRequest(
@@ -164,6 +206,11 @@
             );
         }
 
+        /// <summary>
+        /// Update custom dictionary
+        /// </summary>
+        /// <param name="customDictionary"></param>
+        /// <returns></returns>
         public Response CustomDictionaryUpdate(Dictionary<string, object> customDictionary)
         {
             if (customDictionary.Count < 1)

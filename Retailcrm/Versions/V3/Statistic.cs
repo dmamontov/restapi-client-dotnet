@@ -2,6 +2,10 @@
 {
     public partial class Client
     {
+        /// <summary>
+        /// Update statistic
+        /// </summary>
+        /// <returns></returns>
         public Response StatisticUpdate()
         {
             return Request.MakeRequest(

@@ -5,11 +5,20 @@
     using System.Collections.Generic;
     using System.Linq;
 
+    /// <summary>
+    /// QueryBuilder
+    /// </summary>
     public class QueryBuilder
     {
         private readonly List<KeyValuePair<string, object>> _keyValuePairs
             = new List<KeyValuePair<string, object>>();
 
+        /// <summary>
+        /// Build PHP like query string
+        /// </summary>
+        /// <param name="queryData"></param>
+        /// <param name="argSeperator"></param>
+        /// <returns></returns>
         public static string BuildQueryString(object queryData, string argSeperator = "&")
         {
             var encoder = new QueryBuilder();

@@ -6,6 +6,13 @@
 
     public partial class Client
     {
+        /// <summary>
+        /// Combine orders
+        /// </summary>
+        /// <param name="order"></param>
+        /// <param name="resultOrder"></param>
+        /// <param name="technique"></param>
+        /// <returns></returns>
         public Response OrdersCombine(Dictionary<string, object> order, Dictionary<string, object> resultOrder, string technique = "ours")
         {
             if (order.Count <= 0)

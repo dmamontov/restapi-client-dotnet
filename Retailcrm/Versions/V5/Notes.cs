@@ -6,6 +6,12 @@
 
     public partial class Client
     {
+        /// <summary>
+        /// Create note
+        /// </summary>
+        /// <param name="note"></param>
+        /// <param name="site"></param>
+        /// <returns></returns>
         public Response NotesCreate(Dictionary<string, object> note, string site = "")
         {
             if (note.Count < 1)
@@ -26,6 +32,11 @@
             );
         }
 
+        /// <summary>
+        /// Delete note
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public Response NotesDelete(string id)
         {
             return Request.MakeRequest(
@@ -34,6 +45,13 @@
             );
         }
 
+        /// <summary>
+        /// Get notes list
+        /// </summary>
+        /// <param name="filter"></param>
+        /// <param name="page"></param>
+        /// <param name="limit"></param>
+        /// <returns></returns>
         public Response NotesList(Dictionary<string, object> filter = null, int page = 0, int limit = 0)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();

@@ -6,6 +6,10 @@
 
     public partial class Client
     {
+        /// <summary>
+        /// Countries
+        /// </summary>
+        /// <returns></returns>
         public Response Countries()
         {
             return Request.MakeRequest(
@@ -14,6 +18,10 @@
             );
         }
 
+        /// <summary>
+        /// Delivery services
+        /// </summary>
+        /// <returns></returns>
         public Response DeliveryServices()
         {
             return Request.MakeRequest(
@@ -22,6 +30,10 @@
             );
         }
 
+        /// <summary>
+        /// Delivery types
+        /// </summary>
+        /// <returns></returns>
         public Response DeliveryTypes()
         {
             return Request.MakeRequest(
@@ -30,6 +42,10 @@
             );
         }
 
+        /// <summary>
+        /// Order methods
+        /// </summary>
+        /// <returns></returns>
         public Response OrderMethods()
         {
             return Request.MakeRequest(
@@ -38,6 +54,10 @@
             );
         }
 
+        /// <summary>
+        /// Order types
+        /// </summary>
+        /// <returns></returns>
         public Response OrderTypes()
         {
             return Request.MakeRequest(
@@ -46,6 +66,10 @@
             );
         }
 
+        /// <summary>
+        /// Payment statuses
+        /// </summary>
+        /// <returns></returns>
         public Response PaymentStatuses()
         {
             return Request.MakeRequest(
@@ -54,6 +78,10 @@
             );
         }
 
+        /// <summary>
+        /// Payment types
+        /// </summary>
+        /// <returns></returns>
         public Response PaymentTypes()
         {
             return Request.MakeRequest(
@@ -62,6 +90,10 @@
             );
         }
 
+        /// <summary>
+        /// Product statuses
+        /// </summary>
+        /// <returns></returns>
         public Response ProductStatuses()
         {
             return Request.MakeRequest(
@@ -70,6 +102,10 @@
             );
         }
 
+        /// <summary>
+        /// Sites
+        /// </summary>
+        /// <returns></returns>
         public Response Sites()
         {
             return Request.MakeRequest(
@@ -78,6 +114,10 @@
             );
         }
 
+        /// <summary>
+        /// Statuses groups
+        /// </summary>
+        /// <returns></returns>
         public Response StatusGroups()
         {
             return Request.MakeRequest(
@@ -86,6 +126,10 @@
             );
         }
 
+        /// <summary>
+        /// Statuses
+        /// </summary>
+        /// <returns></returns>
         public Response Statuses()
         {
             return Request.MakeRequest(
@@ -94,6 +138,10 @@
             );
         }
 
+        /// <summary>
+        /// Stores
+        /// </summary>
+        /// <returns></returns>
         public Response Stores()
         {
             return Request.MakeRequest(
@@ -102,6 +150,11 @@
             );
         }
 
+        /// <summary>
+        /// Delivery services edit
+        /// </summary>
+        /// <param name="service"></param>
+        /// <returns></returns>
         public Response DeliveryServicesEdit(Dictionary<string, object> service)
         {
             if (!service.ContainsKey("code"))
@@ -124,6 +177,11 @@
             );
         }
 
+        /// <summary>
+        /// Delivery types edit
+        /// </summary>
+        /// <param name="type"></param>
+        /// <returns></returns>
         public Response DeliveryTypesEdit(Dictionary<string, object> type)
         {
             if (!type.ContainsKey("code"))
@@ -156,6 +214,11 @@
             );
         }
 
+        /// <summary>
+        /// Orders methods edit
+        /// </summary>
+        /// <param name="method"></param>
+        /// <returns></returns>
         public Response OrderMethodsEdit(Dictionary<string, object> method)
         {
             if (!method.ContainsKey("code"))
@@ -178,6 +241,11 @@
             );
         }
 
+        /// <summary>
+        /// Order types edit
+        /// </summary>
+        /// <param name="type"></param>
+        /// <returns></returns>
         public Response OrderTypesEdit(Dictionary<string, object> type)
         {
             if (!type.ContainsKey("code"))
@@ -200,6 +268,11 @@
             );
         }
 
+        /// <summary>
+        /// Payment statuses edit
+        /// </summary>
+        /// <param name="status"></param>
+        /// <returns></returns>
         public Response PaymentStatusesEdit(Dictionary<string, object> status)
         {
             if (!status.ContainsKey("code"))
@@ -222,6 +295,11 @@
             );
         }
 
+        /// <summary>
+        /// Payment types edit
+        /// </summary>
+        /// <param name="type"></param>
+        /// <returns></returns>
         public Response PaymentTypesEdit(Dictionary<string, object> type)
         {
             if (!type.ContainsKey("code"))
@@ -244,6 +322,11 @@
             );
         }
 
+        /// <summary>
+        /// Product statuses edit
+        /// </summary>
+        /// <param name="status"></param>
+        /// <returns></returns>
         public Response ProductStatusesEdit(Dictionary<string, object> status)
         {
             if (!status.ContainsKey("code"))
@@ -266,6 +349,11 @@
             );
         }
 
+        /// <summary>
+        /// Sites edit
+        /// </summary>
+        /// <param name="site"></param>
+        /// <returns></returns>
         public Response SitesEdit(Dictionary<string, object> site)
         {
             if (!site.ContainsKey("code"))
@@ -293,6 +381,11 @@
             );
         }
 
+        /// <summary>
+        /// Statuses edit
+        /// </summary>
+        /// <param name="status"></param>
+        /// <returns></returns>
         public Response StatusesEdit(Dictionary<string, object> status)
         {
             if (!status.ContainsKey("code"))
@@ -325,6 +418,11 @@
             );
         }
 
+        /// <summary>
+        /// Stores edit
+        /// </summary>
+        /// <param name="store"></param>
+        /// <returns></returns>
         public Response StoresEdit(Dictionary<string, object> store)
         {
             if (!store.ContainsKey("code"))

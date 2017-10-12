@@ -6,6 +6,10 @@
 
     public partial class Client
     {
+        /// <summary>
+        /// Price types
+        /// </summary>
+        /// <returns></returns>
         public Response PriceTypes()
         {
             return Request.MakeRequest(
@@ -14,6 +18,11 @@
             );
         }
 
+        /// <summary>
+        /// Price type edit
+        /// </summary>
+        /// <param name="type"></param>
+        /// <returns></returns>
         public Response PriceTypesEdit(Dictionary<string, object> type)
         {
             if (!type.ContainsKey("code"))

@@ -6,6 +6,11 @@
 
     public partial class Client
     {
+        /// <summary>
+        /// Edit marketplace module settings
+        /// </summary>
+        /// <param name="configuration"></param>
+        /// <returns></returns>
         public Response MarketplaceSettingsEdit(Dictionary<string, object> configuration)
         {
             if (configuration.Count < 1)

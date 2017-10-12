@@ -7,9 +7,18 @@
     using System.Net;
     using System.Text;
 
+    /// <summary>
+    /// Request
+    /// </summary>
     public class Request
     {
+        /// <summary>
+        /// Get method
+        /// </summary>
         public const string MethodGet = "GET";
+        /// <summary>
+        /// Post method
+        /// </summary>
         public const string MethodPost = "POST";
         private const string UserAgent = "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 1.1.4322; .NET CLR 2.0.50727)";
         private const string ContentType = "application/x-www-form-urlencoded";
@@ -17,6 +26,12 @@
         private readonly string _url;
         private readonly Dictionary<string, object> _defaultParameters;
 
+        /// <summary>
+        /// Request constructor
+        /// </summary>
+        /// <param name="apiUrl"></param>
+        /// <param name="parameters"></param>
+        /// <exception cref="ArgumentException"></exception>
         public Request(string apiUrl, Dictionary<string, object> parameters = null)
         {
             if (apiUrl.IndexOf("https://", StringComparison.Ordinal) == -1)
@@ -28,6 +43,15 @@
             _defaultParameters = parameters;
         }
 
+        /// <summary>
+        /// Make request method
+        /// </summary>
+        /// <param name="path"></param>
+        /// <param name="method"></param>
+        /// <param name="parameters"></param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentException"></exception>
+        /// <exception cref="WebException"></exception>
         public Response MakeRequest(string path, string method, Dictionary<string, object> parameters = null)
         {
             string[] allowedMethods = { MethodGet, MethodPost };

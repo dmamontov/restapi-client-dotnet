@@ -6,6 +6,13 @@
 
     public partial class Client
     {
+        /// <summary>
+        /// Create customer
+        /// </summary>
+        /// <param name="customer"></param>
+        /// <param name="site"></param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentException"></exception>
         public Response CustomersCreate(Dictionary<string, object> customer, string site = "")
         {
             if (customer.Count < 1)
@@ -26,6 +33,14 @@
             );
         }
 
+        /// <summary>
+        /// Update customer
+        /// </summary>
+        /// <param name="customer"></param>
+        /// <param name="by"></param>
+        /// <param name="site"></param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentException"></exception>
         public Response CustomersUpdate(Dictionary<string, object> customer, string by = "externalId", string site = "")
         {
             if (customer.Count < 1)
@@ -56,6 +71,13 @@
             );
         }
 
+        /// <summary>
+        /// Get customer
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="by"></param>
+        /// <param name="site"></param>
+        /// <returns></returns>
         public Response CustomersGet(string id, string by = "externalId", string site = "")
         {
             CheckIdParameter(by);
@@ -72,6 +94,13 @@
             );
         }
 
+        /// <summary>
+        /// Get customers list
+        /// </summary>
+        /// <param name="filter"></param>
+        /// <param name="page"></param>
+        /// <param name="limit"></param>
+        /// <returns></returns>
         public Response CustomersList(Dictionary<string, object> filter = null, int page = 0, int limit = 0)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
@@ -94,6 +123,11 @@
             return Request.MakeRequest("/customers", Request.MethodGet, parameters);
         }
 
+        /// <summary>
+        /// Fix external id
+        /// </summary>
+        /// <param name="ids"></param>
+        /// <returns></returns>
         public Response CustomersFixExternalIds(Dictionary<string, object>[] ids)
         {
             return Request.MakeRequest(
@@ -106,6 +140,13 @@
             );
         }
 
+        /// <summary>
+        /// Upload customers
+        /// </summary>
+        /// <param name="customers"></param>
+        /// <param name="site"></param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentException"></exception>
         public Response CustomersUpload(List<object> customers, string site = "")
         {
             if (customers.Count < 1)

@@ -6,6 +6,12 @@
 
     public partial class Client
     {
+        /// <summary>
+        /// Create payment
+        /// </summary>
+        /// <param name="payment"></param>
+        /// <param name="site"></param>
+        /// <returns></returns>
         public Response PaymentsCreate(Dictionary<string, object> payment, string site = "")
         {
             if (payment.Count < 1)
@@ -26,6 +32,13 @@
             );
         }
 
+        /// <summary>
+        /// Update payment
+        /// </summary>
+        /// <param name="payment"></param>
+        /// <param name="by"></param>
+        /// <param name="site"></param>
+        /// <returns></returns>
         public Response PaymentsUpdate(Dictionary<string, object> payment, string by = "id", string site = "")
         {
             if (payment.Count < 1)
@@ -56,6 +69,11 @@
             );
         }
 
+        /// <summary>
+        /// Delete payment
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public Response PaymentsDelete(string id)
         {
             return Request.MakeRequest(

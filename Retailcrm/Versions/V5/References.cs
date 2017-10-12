@@ -6,6 +6,10 @@
 
     public partial class Client
     {
+        /// <summary>
+        /// Costs groups
+        /// </summary>
+        /// <returns></returns>
         public Response CostGroups()
         {
             return Request.MakeRequest(
@@ -14,6 +18,10 @@
             );
         }
 
+        /// <summary>
+        /// Costs
+        /// </summary>
+        /// <returns></returns>
         public Response CostItems()
         {
             return Request.MakeRequest(
@@ -22,6 +30,10 @@
             );
         }
 
+        /// <summary>
+        /// Legal entities
+        /// </summary>
+        /// <returns></returns>
         public Response LegalEntities()
         {
             return Request.MakeRequest(
@@ -30,6 +42,11 @@
             );
         }
 
+        /// <summary>
+        /// Cost group edit
+        /// </summary>
+        /// <param name="group"></param>
+        /// <returns></returns>
         public Response CostGroupsEdit(Dictionary<string, object> group)
         {
             if (!group.ContainsKey("code"))
@@ -57,6 +74,11 @@
             );
         }
 
+        /// <summary>
+        /// Cost items edit
+        /// </summary>
+        /// <param name="item"></param>
+        /// <returns></returns>
         public Response CostItemsEdit(Dictionary<string, object> item)
         {
             if (!item.ContainsKey("code"))
@@ -90,6 +112,11 @@
             );
         }
 
+        /// <summary>
+        /// Legal entities edit
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
         public Response LegalEntitiesEdit(Dictionary<string, object> entity)
         {
             if (!entity.ContainsKey("code"))

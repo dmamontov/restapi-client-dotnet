@@ -4,6 +4,13 @@
 
     public partial class Client
     {
+        /// <summary>
+        /// Get users
+        /// </summary>
+        /// <param name="filter"></param>
+        /// <param name="page"></param>
+        /// <param name="limit"></param>
+        /// <returns></returns>
         public Response Users(Dictionary<string, object> filter = null, int page = 0, int limit = 0)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
@@ -26,6 +33,12 @@
             return Request.MakeRequest("/users", Request.MethodGet, parameters);
         }
 
+        /// <summary>
+        /// Get users groups
+        /// </summary>
+        /// <param name="page"></param>
+        /// <param name="limit"></param>
+        /// <returns></returns>
         public Response UsersGroups(int page = 0, int limit = 0)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
@@ -43,6 +56,11 @@
             return Request.MakeRequest("/user-groups", Request.MethodGet, parameters);
         }
 
+        /// <summary>
+        /// Get user
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public Response User(int id)
         {
             return Request.MakeRequest($"/users/{id}", Request.MethodGet);

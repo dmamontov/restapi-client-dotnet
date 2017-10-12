@@ -6,6 +6,13 @@
 
     public partial class Client
     {
+        /// <summary>
+        /// Get costs
+        /// </summary>
+        /// <param name="filter"></param>
+        /// <param name="page"></param>
+        /// <param name="limit"></param>
+        /// <returns></returns>
         public Response CostsList(Dictionary<string, object> filter = null, int page = 0, int limit = 0)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
@@ -28,6 +35,12 @@
             return Request.MakeRequest("/costs", Request.MethodGet, parameters);
         }
 
+        /// <summary>
+        /// Create cost
+        /// </summary>
+        /// <param name="cost"></param>
+        /// <param name="site"></param>
+        /// <returns></returns>
         public Response CostsCreate(Dictionary<string, object> cost, string site = "")
         {
             if (cost.Count < 1)
@@ -48,6 +61,11 @@
             );
         }
 
+        /// <summary>
+        /// Delete cost
+        /// </summary>
+        /// <param name="ids"></param>
+        /// <returns></returns>
         public Response CostsDelete(List<string> ids)
         {
             if (ids.Count < 1)
@@ -65,6 +83,11 @@
             );
         }
 
+        /// <summary>
+        /// Upload costs
+        /// </summary>
+        /// <param name="costs"></param>
+        /// <returns></returns>
         public Response CostsUpload(List<object> costs)
         {
             if (costs.Count < 1)
@@ -82,11 +105,21 @@
             );
         }
 
+        /// <summary>
+        /// Get cost
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public Response CostsGet(int id)
         {
             return Request.MakeRequest($"/costs/{id}", Request.MethodGet);
         }
 
+        /// <summary>
+        /// Batch delete
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public Response CostsDelete(string id)
         {
             return Request.MakeRequest(
@@ -95,6 +128,12 @@
             );
         }
 
+        /// <summary>
+        /// Update cost
+        /// </summary>
+        /// <param name="cost"></param>
+        /// <param name="site"></param>
+        /// <returns></returns>
         public Response CostsUpdate(Dictionary<string, object> cost, string site = "")
         {
             if (cost.Count < 1)

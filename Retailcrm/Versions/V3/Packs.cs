@@ -6,6 +6,13 @@
 
     public partial class Client
     {
+        /// <summary>
+        /// Get packs list
+        /// </summary>
+        /// <param name="filter"></param>
+        /// <param name="page"></param>
+        /// <param name="limit"></param>
+        /// <returns></returns>
         public Response PacksList(Dictionary<string, object> filter = null, int page = 0, int limit = 0)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
@@ -28,6 +35,11 @@
             return Request.MakeRequest("/orders/packs", Request.MethodGet, parameters);
         }
 
+        /// <summary>
+        /// Create pack
+        /// </summary>
+        /// <param name="pack"></param>
+        /// <returns></returns>
         public Response PacksCreate(Dictionary<string, object> pack)
         {
             if (pack.Count < 1)
@@ -45,6 +57,11 @@
             );
         }
 
+        /// <summary>
+        /// Update pack data
+        /// </summary>
+        /// <param name="pack"></param>
+        /// <returns></returns>
         public Response PacksUpdate(Dictionary<string, object> pack)
         {
             if (pack.Count < 1)
@@ -67,6 +84,11 @@
             );
         }
 
+        /// <summary>
+        /// Delete pack
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public Response PacksDelete(string id)
         {
             return Request.MakeRequest(
@@ -75,6 +97,11 @@
             );
         }
 
+        /// <summary>
+        /// Get pack by id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public Response PacksGet(string id)
         {
             return Request.MakeRequest(
@@ -83,6 +110,13 @@
             );
         }
 
+        /// <summary>
+        /// Get packs history
+        /// </summary>
+        /// <param name="filter"></param>
+        /// <param name="page"></param>
+        /// <param name="limit"></param>
+        /// <returns></returns>
         public Response PacksHistory(Dictionary<string, object> filter = null, int page = 1, int limit = 20)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();

@@ -6,6 +6,11 @@
 
     public partial class Client
     {
+        /// <summary>
+        /// Get integration settings
+        /// </summary>
+        /// <param name="code"></param>
+        /// <returns></returns>
         public Response IntegrationsSettingGet(string code)
         {
             if (string.IsNullOrEmpty(code))
@@ -19,6 +24,11 @@
             );
         }
 
+        /// <summary>
+        /// Create/Update integration settings
+        /// </summary>
+        /// <param name="integrationModule"></param>
+        /// <returns></returns>
         public Response IntegrationsSettingsEdit(Dictionary<string, object> integrationModule)
         {
             if (integrationModule.Count < 1)

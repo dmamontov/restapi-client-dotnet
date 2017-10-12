@@ -6,6 +6,13 @@
 
     public partial class Client
     {
+        /// <summary>
+        /// Get products
+        /// </summary>
+        /// <param name="filter"></param>
+        /// <param name="page"></param>
+        /// <param name="limit"></param>
+        /// <returns></returns>
         public Response StoreProducts(Dictionary<string, object> filter = null, int page = 0, int limit = 0)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
@@ -28,6 +35,11 @@
             return Request.MakeRequest("/store/products", Request.MethodGet, parameters);
         }
 
+        /// <summary>
+        /// Upload prices
+        /// </summary>
+        /// <param name="prices"></param>
+        /// <returns></returns>
         public Response StorePricesUpload(List<object> prices)
         {
             if (prices.Count< 1)
@@ -50,6 +62,11 @@
             );
         }
 
+        /// <summary>
+        /// Get store settings
+        /// </summary>
+        /// <param name="code"></param>
+        /// <returns></returns>
         public Response StoreSettingGet(string code)
         {
             if (string.IsNullOrEmpty(code))
@@ -63,6 +80,11 @@
             );
         }
 
+        /// <summary>
+        /// Edit store settings
+        /// </summary>
+        /// <param name="configuration"></param>
+        /// <returns></returns>
         public Response StoreSettingsEdit(Dictionary<string, object> configuration)
         {
             if (configuration.Count < 1)

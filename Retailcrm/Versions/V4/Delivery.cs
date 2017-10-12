@@ -6,6 +6,11 @@
 
     public partial class Client
     {
+        /// <summary>
+        /// Get delivery settings
+        /// </summary>
+        /// <param name="code"></param>
+        /// <returns></returns>
         public Response DeliverySettingGet(string code)
         {
             if (string.IsNullOrEmpty(code))
@@ -19,6 +24,11 @@
             );
         }
 
+        /// <summary>
+        /// Edit delivery settings
+        /// </summary>
+        /// <param name="configuration"></param>
+        /// <returns></returns>
         public Response DeliverySettingsEdit(Dictionary<string, object> configuration)
         {
             if (configuration.Count < 1)
@@ -56,6 +66,12 @@
             );
         }
 
+        /// <summary>
+        /// Update delivery tracking
+        /// </summary>
+        /// <param name="code"></param>
+        /// <param name="statusUpdate"></param>
+        /// <returns></returns>
         public Response DeliveryTracking(string code, List<object> statusUpdate)
         {
             if (string.IsNullOrEmpty(code))

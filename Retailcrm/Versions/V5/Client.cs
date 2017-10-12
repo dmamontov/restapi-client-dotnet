@@ -3,8 +3,17 @@
     using System.Collections.Generic;
     using ParentClass = V4.Client;
 
+    /// <summary>
+    /// V5 Client
+    /// </summary>
     public partial class Client : ParentClass
     {
+        /// <summary>
+        /// V5 Client Constructor
+        /// </summary>
+        /// <param name="url"></param>
+        /// <param name="key"></param>
+        /// <param name="site"></param>
         public Client(string url, string key, string site = "") : base(url, key, site)
         {
             if ("/" != url.Substring(url.Length - 1, 1))

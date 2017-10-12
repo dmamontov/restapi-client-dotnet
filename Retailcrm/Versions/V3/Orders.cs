@@ -6,6 +6,12 @@
 
     public partial class Client
     {
+        /// <summary>
+        /// Create order
+        /// </summary>
+        /// <param name="order"></param>
+        /// <param name="site"></param>
+        /// <returns></returns>
         public Response OrdersCreate(Dictionary<string, object> order, string site = "")
         {
             if (order.Count < 1)
@@ -26,6 +32,13 @@
             );
         }
 
+        /// <summary>
+        /// Update order
+        /// </summary>
+        /// <param name="order"></param>
+        /// <param name="by"></param>
+        /// <param name="site"></param>
+        /// <returns></returns>
         public Response OrdersUpdate(Dictionary<string, object> order, string by = "externalId", string site = "")
         {
             if (order.Count < 1)
@@ -56,6 +69,13 @@
             );
         }
 
+        /// <summary>
+        /// Get order
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="by"></param>
+        /// <param name="site"></param>
+        /// <returns></returns>
         public Response OrdersGet(string id, string by = "externalId", string site = "")
         {
             CheckIdParameter(by);
@@ -72,7 +92,14 @@
             );
         }
 
-        public Response OrdersList(Dictionary<string, object> filter = null, int page = 0, int limit = 0)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="filter"></param>
+        /// <param name="page"></param>
+        /// <param name="limit"></param>
+        /// <returns></returns>
+        public Response OrdersList(Dictionary<string, object> filter = null, int page = 1, int limit = 20)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
 
@@ -81,12 +108,12 @@
                 parameters.Add("filter", filter);
             }
 
-            if (page > 0)
+            if (page > 1)
             {
                 parameters.Add("page", page);
             }
 
-            if (limit > 0)
+            if (limit > 20)
             {
                 parameters.Add("limit", limit);
             }
@@ -94,6 +121,11 @@
             return Request.MakeRequest("/orders", Request.MethodGet, parameters);
         }
 
+        /// <summary>
+        /// Fix external ids
+        /// </summary>
+        /// <param name="ids"></param>
+        /// <returns></returns>
         public Response OrdersFixExternalIds(Dictionary<string, object>[] ids)
         {
             return Request.MakeRequest(
@@ -106,6 +138,15 @@
             );
         }
 
+        /// <summary>
+        /// Get orders history
+        /// </summary>
+        /// <param name="startDate"></param>
+        /// <param name="endDate"></param>
+        /// <param name="limit"></param>
+        /// <param name="offset"></param>
+        /// <param name="skipMyChanges"></param>
+        /// <returns></returns>
         public Response OrdersHistory(DateTime? startDate = null, DateTime? endDate = null, int limit = 200, int offset = 0, bool skipMyChanges = true)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
@@ -139,6 +180,12 @@
             );
         }
 
+        /// <summary>
+        /// Get orders statuses
+        /// </summary>
+        /// <param name="ids"></param>
+        /// <param name="externalIds"></param>
+        /// <returns></returns>
         public Response OrdersStatuses(List<string> ids, List<string> externalIds = null)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
@@ -174,6 +221,12 @@
             );
         }
 
+        /// <summary>
+        /// Orders upload
+        /// </summary>
+        /// <param name="orders"></param>
+        /// <param name="site"></param>
+        /// <returns></returns>
         public Response OrdersUpload(List<object> orders, string site = "")
         {
             if (orders.Count < 1)

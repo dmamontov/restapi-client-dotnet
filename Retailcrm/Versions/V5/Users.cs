@@ -5,6 +5,12 @@
 
     public partial class Client
     {
+        /// <summary>
+        /// Update user status
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="status"></param>
+        /// <returns></returns>
         public Response UsersStatus(int id, string status)
         {
             List<string> statuses = new List<string> { "free", "busy", "dinner", "break"};

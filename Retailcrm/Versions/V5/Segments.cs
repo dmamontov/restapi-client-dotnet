@@ -1,10 +1,16 @@
 ﻿namespace Retailcrm.Versions.V5
 {
-    using System;
     using System.Collections.Generic;
 
     public partial class Client
     {
+        /// <summary>
+        /// Get segments
+        /// </summary>
+        /// <param name="filter"></param>
+        /// <param name="page"></param>
+        /// <param name="limit"></param>
+        /// <returns></returns>
         public Response Segments(Dictionary<string, object> filter = null, int page = 0, int limit = 0)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();

@@ -4,11 +4,26 @@
     using System.Collections.Generic;
     using System.Linq;
 
+    /// <summary>
+    /// V3 Client
+    /// </summary>
     public partial class Client
     {
+        /// <summary>
+        /// Request
+        /// </summary>
         protected Request Request;
+        /// <summary>
+        /// Site code
+        /// </summary>
         protected string SiteCode;
 
+        /// <summary>
+        /// V3 Client Constructor
+        /// </summary>
+        /// <param name="url"></param>
+        /// <param name="key"></param>
+        /// <param name="site"></param>
         public Client(string url, string key, string site = "")
         {
             if ("/" != url.Substring(url.Length - 1, 1))

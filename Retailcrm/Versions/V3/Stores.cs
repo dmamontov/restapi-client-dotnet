@@ -6,6 +6,13 @@
 
     public partial class Client
     {
+        /// <summary>
+        /// Get inventories
+        /// </summary>
+        /// <param name="filter"></param>
+        /// <param name="page"></param>
+        /// <param name="limit"></param>
+        /// <returns></returns>
         public Response StoreInventoriesGet(Dictionary<string, object> filter = null, int page = 0, int limit = 0)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
@@ -28,6 +35,12 @@
             return Request.MakeRequest("/store/inventories", Request.MethodGet, parameters);
         }
 
+        /// <summary>
+        /// Upload inventories
+        /// </summary>
+        /// <param name="offers"></param>
+        /// <param name="site"></param>
+        /// <returns></returns>
         public Response StoreInventoriesUpload(List<object> offers, string site = "")
         {
             if (offers.Count< 1)
