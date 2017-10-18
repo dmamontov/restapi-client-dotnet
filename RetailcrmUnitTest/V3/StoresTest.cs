@@ -4,6 +4,7 @@
     using System.Collections.Generic;
     using System.Collections.Specialized;
     using System.Configuration;
+    using System.Diagnostics;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Retailcrm;
     using Retailcrm.Versions.V3;
@@ -87,6 +88,8 @@
             };
 
             Response response = _client.StoreInventoriesGet(filter, 1, 50);
+
+            Debug.WriteLine(response.GetRawResponse());
 
             Assert.IsTrue(response.IsSuccessfull());
             Assert.IsTrue(response.GetStatusCode() == 200);
