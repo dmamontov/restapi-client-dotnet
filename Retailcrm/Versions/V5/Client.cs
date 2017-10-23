@@ -1,6 +1,7 @@
-﻿namespace Retailcrm.Versions.V5
+﻿using System.Collections.Generic;
+
+namespace Retailcrm.Versions.V5
 {
-    using System.Collections.Generic;
     using ParentClass = V4.Client;
 
     /// <summary>

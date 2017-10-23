@@ -1,7 +1,7 @@
-﻿namespace Retailcrm.Versions.V5
-{
-    using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
+namespace Retailcrm.Versions.V5
+{
     public partial class Client
     {
         /// <summary>

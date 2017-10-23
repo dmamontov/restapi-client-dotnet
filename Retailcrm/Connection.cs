@@ -1,7 +1,7 @@
-﻿namespace Retailcrm
-{
-    using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
+namespace Retailcrm
+{
     /// <summary>
     /// Unversioned API Client
     /// </summary>

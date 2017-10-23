@@ -1,9 +1,9 @@
-﻿namespace Retailcrm.Versions.V3
-{
-    using System;
-    using System.Collections.Generic;
-    using System.Web.Script.Serialization;
+﻿using System;
+using System.Collections.Generic;
+using System.Web.Script.Serialization;
 
+namespace Retailcrm.Versions.V3
+{
     public partial class Client
     {
         /// <summary>
@@ -87,7 +87,8 @@
                 Request.MethodGet,
                 FillSite(
                     site,
-                    new Dictionary<string, object>() {
+                    new Dictionary<string, object>
+                    {
                         { "by", by }
                     }
                 )

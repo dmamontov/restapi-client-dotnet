@@ -1,9 +1,7 @@
 ﻿namespace RetailcrmUnitTest.V4
 {
-    using System;
     using System.Collections.Specialized;
     using System.Configuration;
-    using System.Collections.Generic;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Retailcrm;
     using Retailcrm.Versions.V4;

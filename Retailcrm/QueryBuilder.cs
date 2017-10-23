@@ -1,10 +1,10 @@
-﻿namespace Retailcrm
-{
-    using System;
-    using System.Collections;
-    using System.Collections.Generic;
-    using System.Linq;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 
+namespace Retailcrm
+{
     /// <summary>
     /// QueryBuilder
     /// </summary>
@@ -27,6 +27,11 @@
             return encoder.GetUriString(argSeperator);
         }
 
+        /// <summary>
+        /// GetUriString
+        /// </summary>
+        /// <param name="argSeperator"></param>
+        /// <returns></returns>
         private string GetUriString(string argSeperator)
         {
             return String.Join(argSeperator,
@@ -38,6 +43,12 @@
                 }));
         }
 
+        /// <summary>
+        /// AddEntry
+        /// </summary>
+        /// <param name="prefix"></param>
+        /// <param name="instance"></param>
+        /// <param name="allowObjects"></param>
         private void AddEntry(string prefix, object instance, bool allowObjects)
         {
             var dictionary = instance as IDictionary;
@@ -61,6 +72,11 @@
             }
         }
 
+        /// <summary>
+        /// Add
+        /// </summary>
+        /// <param name="prefix"></param>
+        /// <param name="datas"></param>
         private void Add(string prefix, IEnumerable<Entry> datas)
         {
             foreach (var item in datas)
@@ -73,19 +89,27 @@
             }
         }
 
+        /// <summary>
+        /// Entry
+        /// </summary>
         private struct Entry
         {
             public string Key;
             public object Value;
         }
 
+        /// <summary>
+        /// GetObjectAdapter
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
         private IEnumerable<Entry> GetObjectAdapter(object data)
         {
             var properties = data.GetType().GetProperties();
 
             foreach (var property in properties)
             {
-                yield return new Entry()
+                yield return new Entry
                 {
                     Key = property.Name,
                     Value = property.GetValue(data)
@@ -93,28 +117,38 @@
             }
         }
 
+        /// <summary>
+        /// GetArrayAdapter
+        /// </summary>
+        /// <param name="collection"></param>
+        /// <returns></returns>
         private IEnumerable<Entry> GetArrayAdapter(ICollection collection)
         {
             int i = 0;
             foreach (var item in collection)
             {
-                yield return new Entry()
+                yield return new Entry
                 {
                     Key = i.ToString(),
-                    Value = item,
+                    Value = item
                 };
                 i++;
             }
         }
-        
+
+        /// <summary>
+        /// GetDictionaryAdapter
+        /// </summary>
+        /// <param name="collection"></param>
+        /// <returns></returns>
         private IEnumerable<Entry> GetDictionaryAdapter(IDictionary collection)
         {
             foreach (DictionaryEntry item in collection)
             {
-                yield return new Entry()
+                yield return new Entry
                 {
                     Key = item.Key.ToString(),
-                    Value = item.Value,
+                    Value = item.Value
                 };
             }
         }

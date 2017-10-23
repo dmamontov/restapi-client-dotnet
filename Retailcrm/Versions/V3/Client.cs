@@ -1,9 +1,9 @@
-﻿namespace Retailcrm.Versions.V3
-{
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
+namespace Retailcrm.Versions.V3
+{
     /// <summary>
     /// V3 Client
     /// </summary>

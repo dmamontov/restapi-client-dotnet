@@ -1,9 +1,9 @@
-﻿namespace Retailcrm.Versions.V5
-{
-    using System;
-    using System.Collections.Generic;
-    using System.Web.Script.Serialization;
+﻿using System;
+using System.Collections.Generic;
+using System.Web.Script.Serialization;
 
+namespace Retailcrm.Versions.V5
+{
     public partial class Client
     {
         /// <summary>

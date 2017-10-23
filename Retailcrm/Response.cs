@@ -1,8 +1,9 @@
-﻿namespace Retailcrm
-{
-    using System;
-    using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Web.Script.Serialization;
 
+namespace Retailcrm
+{
     /// <summary>
     /// Response
     /// </summary>
@@ -29,7 +30,7 @@
 
             _rawResponse = responseBody;
 
-            var jsSerializer = new System.Web.Script.Serialization.JavaScriptSerializer();
+            var jsSerializer = new JavaScriptSerializer();
             _responseData = (Dictionary<string, object>)jsSerializer.DeserializeObject(responseBody);
         }
 
@@ -68,6 +69,5 @@
         {
             return _statusCode < 400;
         }
-
     }
 }
