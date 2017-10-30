@@ -1,13 +1,13 @@
 .NET-клиент RetailCRM API
 =========================
 
-.NET-клиент для работы с [RetailCRM API](http://www.retailcrm.ru/docs/Developers/Index). Клиент поддерживает версию со всеми доступными на текущий момент версиями API (v3-v5).
+.NET-клиент для работы с [RetailCRM API](http://www.retailcrm.ru/docs/Developers/Index). Клиент поддерживает все доступные на текущий момент версии API (v3-v5).
 
 Установка через NuGet
 ---------------------
 
 ``` bash
-PM> Install-Package RetailCRM.ApiClient
+PM> Install-Package Retailcrm.SDK
 ```
 
 Примеры использования
