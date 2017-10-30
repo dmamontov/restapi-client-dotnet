@@ -27,7 +27,7 @@ Response response = api.OrdersGet("12345", "externalId");
 if (response.isSuccessful()) {
     Debug.WriteLine(Response.GetRawResponse());
 } else {
-    Debug.WriteLine($"Ошибка получения информации о заказа: [Статус HTTP-ответа {response.GetStatusCode().ToString()}]");
+    Debug.WriteLine($"Ошибка: [Статус HTTP-ответа {response.GetStatusCode().ToString()}]");
 }
 
 ```
@@ -67,7 +67,7 @@ Response response = api.OrdersCreate(new Dictionary<string, object>
 if (response.isSuccessful()) {
     Debug.WriteLine(Response.GetResponse()["externalId"].ToString());
 } else {
-    Debug.WriteLine($"Ошибка получения информации о заказа: [Статус HTTP-ответа {response.GetStatusCode().ToString()}]");
+    Debug.WriteLine($"Ошибка: [Статус HTTP-ответа {response.GetStatusCode().ToString()}]");
 }
 
 ```
