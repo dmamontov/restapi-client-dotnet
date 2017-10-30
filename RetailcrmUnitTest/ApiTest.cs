@@ -1,10 +1,10 @@
-﻿namespace RetailcrmUnitTest
-{
-    using System.Collections.Specialized;
-    using System.Configuration;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using Retailcrm;
+﻿using System.Collections.Specialized;
+using System.Configuration;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Retailcrm;
 
+namespace RetailcrmUnitTest
+{
     [TestClass]
     public class ApiTest
     {

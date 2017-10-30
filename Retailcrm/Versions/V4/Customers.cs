@@ -11,7 +11,7 @@ namespace Retailcrm.Versions.V4
         /// <param name="page"></param>
         /// <param name="limit"></param>
         /// <returns></returns>
-        public Response CustomersHistory(Dictionary<string, object> filter = null, int page = 0, int limit = 0)
+        public Response CustomersHistory(Dictionary<string, object> filter = null, int page = 1, int limit = 20)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
 

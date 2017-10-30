@@ -13,7 +13,7 @@ namespace Retailcrm.Versions.V5
         /// <param name="page"></param>
         /// <param name="limit"></param>
         /// <returns></returns>
-        public Response CustomFieldsList(Dictionary<string, object> filter = null, int page = 0, int limit = 0)
+        public Response CustomFieldsList(Dictionary<string, object> filter = null, int page = 1, int limit = 20)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
 
@@ -39,9 +39,8 @@ namespace Retailcrm.Versions.V5
         /// Create custom field
         /// </summary>
         /// <param name="customField"></param>
-        /// <param name="entity"></param>
         /// <returns></returns>
-        public Response CustomFieldsCreate(Dictionary<string, object> customField, string entity = "")
+        public Response CustomFieldsCreate(Dictionary<string, object> customField)
         {
             List<string> types = new List<string>
             {
@@ -68,6 +67,11 @@ namespace Retailcrm.Versions.V5
                 throw new ArgumentException("Parameter `customField` should contain `type`");
             }
 
+            if (!customField.ContainsKey("entity"))
+            {
+                throw new ArgumentException("Parameter `customField` should contain `entity`");
+            }
+
             if (!types.Contains(customField["type"].ToString()))
             {
                 throw new ArgumentException(
@@ -76,7 +80,7 @@ namespace Retailcrm.Versions.V5
             }
 
             return Request.MakeRequest(
-                $"/custom-fields/{entity}/create",
+                $"/custom-fields/{customField["entity"].ToString()}/create",
                 Request.MethodPost,
                 new Dictionary<string, object>
                 {
@@ -103,9 +107,8 @@ namespace Retailcrm.Versions.V5
         /// Update custom field
         /// </summary>
         /// <param name="customField"></param>
-        /// <param name="entity"></param>
         /// <returns></returns>
-        public Response CustomFieldsUpdate(Dictionary<string, object> customField, string entity = "")
+        public Response CustomFieldsUpdate(Dictionary<string, object> customField)
         {
             if (customField.Count < 1)
             {
@@ -123,7 +126,7 @@ namespace Retailcrm.Versions.V5
             }
 
             return Request.MakeRequest(
-                $"/custom-fields/{entity}/{customField["code"].ToString()}/edit",
+                $"/custom-fields/{customField["entity"].ToString()}/{customField["code"].ToString()}/edit",
                 Request.MethodPost,
                 new Dictionary<string, object>
                 {
@@ -139,7 +142,7 @@ namespace Retailcrm.Versions.V5
         /// <param name="page"></param>
         /// <param name="limit"></param>
         /// <returns></returns>
-        public Response CustomDictionaryList(Dictionary<string, object> filter = null, int page = 0, int limit = 0)
+        public Response CustomDictionaryList(Dictionary<string, object> filter = null, int page = 1, int limit = 20)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
 

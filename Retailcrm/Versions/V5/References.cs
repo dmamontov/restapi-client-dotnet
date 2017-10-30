@@ -91,6 +91,11 @@ namespace Retailcrm.Versions.V5
                 throw new ArgumentException("Parameter `name` is missing");
             }
 
+            if (!item.ContainsKey("group"))
+            {
+                throw new ArgumentException("Parameter `group` is missing");
+            }
+
             List<string> types = new List<string>
             {
                 "const",
@@ -127,6 +132,16 @@ namespace Retailcrm.Versions.V5
             if (!entity.ContainsKey("legalName"))
             {
                 throw new ArgumentException("Parameter `legalName` is missing");
+            }
+
+            if (!entity.ContainsKey("countryIso"))
+            {
+                throw new ArgumentException("Parameter `countryIso` is missing");
+            }
+
+            if (!entity.ContainsKey("contragentType"))
+            {
+                throw new ArgumentException("Parameter `contragentType` is missing");
             }
 
             return Request.MakeRequest(

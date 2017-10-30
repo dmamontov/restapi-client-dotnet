@@ -1,16 +1,15 @@
-﻿using System.Globalization;
+﻿using System;
+using System.Collections.Generic;
+using System.Collections.Specialized;
+using System.Configuration;
+using System.Globalization;
+using System.Linq;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Retailcrm;
+using Retailcrm.Versions.V3;
 
 namespace RetailcrmUnitTest.V3
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Collections.Specialized;
-    using System.Configuration;
-    using System.Linq;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using Retailcrm;
-    using Retailcrm.Versions.V3;
-
     [TestClass]
     public class PacksTest
     {
@@ -22,28 +21,6 @@ namespace RetailcrmUnitTest.V3
             _appSettings = ConfigurationManager.AppSettings;
             _client = new Client(_appSettings["apiUrl"], _appSettings["apiKey"], _appSettings["site"]);
         }
-
-        #region Дополнительные атрибуты тестирования
-        //
-        // При написании тестов можно использовать следующие дополнительные атрибуты:
-        //
-        // ClassInitialize используется для выполнения кода до запуска первого теста в классе
-        // [ClassInitialize()]
-        // public static void MyClassInitialize(TestContext testContext) { }
-        //
-        // ClassCleanup используется для выполнения кода после завершения работы всех тестов в классе
-        // [ClassCleanup()]
-        // public static void MyClassCleanup() { }
-        //
-        // TestInitialize используется для выполнения кода перед запуском каждого теста 
-        // [TestInitialize()]
-        // public void MyTestInitialize() { }
-        //
-        // TestCleanup используется для выполнения кода после завершения каждого теста
-        // [TestCleanup()]
-        // public void MyTestCleanup() { }
-        //
-        #endregion
 
         [TestMethod]
         public void PacksCreateUpdateReadDelete()

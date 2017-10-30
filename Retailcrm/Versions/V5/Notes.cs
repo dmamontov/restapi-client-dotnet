@@ -52,7 +52,7 @@ namespace Retailcrm.Versions.V5
         /// <param name="page"></param>
         /// <param name="limit"></param>
         /// <returns></returns>
-        public Response NotesList(Dictionary<string, object> filter = null, int page = 0, int limit = 0)
+        public Response NotesList(Dictionary<string, object> filter = null, int page = 1, int limit = 20)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
 

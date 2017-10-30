@@ -58,11 +58,27 @@
     <Compile Include="V3\OrdersTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="V3\PacksTest.cs" />
+    <Compile Include="V3\ReferencesTest.cs" />
     <Compile Include="V3\StoresTest.cs" />
+    <Compile Include="V3\TelephonyTest.cs" />
+    <Compile Include="V4\CustomersTest.cs" />
+    <Compile Include="V4\MarketplaceTest.cs" />
     <Compile Include="V4\OrdersTest.cs" />
     <Compile Include="V4\ReferencesTest.cs" />
+    <Compile Include="V4\StoresTest.cs" />
+    <Compile Include="V4\TelephonyTest.cs" />
+    <Compile Include="V4\UsersTest.cs" />
+    <Compile Include="V5\CostsTest.cs" />
+    <Compile Include="V5\CustomFieldsTest.cs" />
+    <Compile Include="V5\IntegrationTest.cs" />
+    <Compile Include="V5\NotesTest.cs" />
+    <Compile Include="V5\PaymentsTest.cs" />
+    <Compile Include="V5\TasksTest.cs" />
+    <Compile Include="V5\TelephonyTest.cs" />
+    <Compile Include="V5\UsersTest.cs" />
     <Compile Include="V5\OrdersTest.cs" />
     <Compile Include="V5\ReferencesTest.cs" />
+    <Compile Include="V5\SegmentsTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -1,15 +1,14 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Collections.Specialized;
+using System.Configuration;
+using System.Collections.Generic;
+using System.Diagnostics;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Retailcrm;
+using Retailcrm.Versions.V5;
 
 namespace RetailcrmUnitTest.V5
 {
-    using System;
-    using System.Collections.Specialized;
-    using System.Configuration;
-    using System.Collections.Generic;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using Retailcrm;
-    using Retailcrm.Versions.V5;
-
     [TestClass]
     public class OrdersTest
     {

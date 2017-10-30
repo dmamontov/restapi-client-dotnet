@@ -19,6 +19,16 @@ namespace Retailcrm.Versions.V5
                 throw new ArgumentException("Parameter `payment` must contains a data");
             }
 
+            if (!payment.ContainsKey("type"))
+            {
+                throw new ArgumentException("Parameter `type` must be set");
+            }
+
+            if (!payment.ContainsKey("order"))
+            {
+                throw new ArgumentException("Parameter `order` must be set");
+            }
+
             return Request.MakeRequest(
                 "/orders/payments/create",
                 Request.MethodPost,

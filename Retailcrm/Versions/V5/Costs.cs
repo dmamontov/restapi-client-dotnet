@@ -13,7 +13,7 @@ namespace Retailcrm.Versions.V5
         /// <param name="page"></param>
         /// <param name="limit"></param>
         /// <returns></returns>
-        public Response CostsList(Dictionary<string, object> filter = null, int page = 0, int limit = 0)
+        public Response CostsList(Dictionary<string, object> filter = null, int page = 1, int limit = 20)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
 
@@ -46,6 +46,26 @@ namespace Retailcrm.Versions.V5
             if (cost.Count < 1)
             {
                 throw new ArgumentException("Parameter `cost` must contains a data");
+            }
+
+            if (!cost.ContainsKey("costItem"))
+            {
+                throw new ArgumentException("Parameter `costItem` must be set");
+            }
+
+            if (!cost.ContainsKey("summ"))
+            {
+                throw new ArgumentException("Parameter `summ` must be set");
+            }
+
+            if (!cost.ContainsKey("dateFrom"))
+            {
+                throw new ArgumentException("`dateFrom`: Time interval lower bound must not be blank");
+            }
+
+            if (!cost.ContainsKey("dateTo"))
+            {
+                throw new ArgumentException("`dateTo`: Time interval upper bound must not be blank");
             }
 
             return Request.MakeRequest(
@@ -93,6 +113,11 @@ namespace Retailcrm.Versions.V5
             if (costs.Count < 1)
             {
                 throw new ArgumentException("Parameter `costs` must contains a data");
+            }
+
+            if (costs.Count > 50)
+            {
+                throw new ArgumentException("Parameter `costs` must contain 50 or less records");
             }
 
             return Request.MakeRequest(

@@ -1,13 +1,13 @@
-﻿namespace RetailcrmUnitTest.V3
-{
-    using System;
-    using System.Collections.Generic;
-    using System.Collections.Specialized;
-    using System.Configuration;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using Retailcrm;
-    using Retailcrm.Versions.V3;
+﻿using System;
+using System.Collections.Generic;
+using System.Collections.Specialized;
+using System.Configuration;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Retailcrm;
+using Retailcrm.Versions.V3;
 
+namespace RetailcrmUnitTest.V3
+{
     [TestClass]
     public class OrdersTest
     {
