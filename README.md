@@ -1,5 +1,5 @@
-[![AppVeyor](https://img.shields.io/appveyor/build/gwinn/api-client-dotnet)](https://ci.appveyor.com/project/gwinn/api-client-dotnet)
-[![NuGet](https://img.shields.io/nuget/v/Retailcrm.SDK.svg)](https://www.nuget.org/packages/Retailcrm.SDK/)
+[![AppVeyor](https://img.shields.io/appveyor/build/gwinn/api-client-dotnet?logo=appveyor&logoColor=white)](https://ci.appveyor.com/project/gwinn/api-client-dotnet)
+[![NuGet](https://img.shields.io/nuget/v/Retailcrm.SDK.svg?logo=nuget&logoColor=white)](https://www.nuget.org/packages/Retailcrm.SDK/)
 
 
 # RetailCRM API C# client
